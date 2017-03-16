@@ -380,7 +380,7 @@ public class ExcelUtil {
                         Iterator<Cell> cellIterator = row.cellIterator();
                         Integer index = 0;
                         while (cellIterator.hasNext()) {
-                            String value = cellIterator.next().getStringCellValue();
+                            String value = cellIterator.next().toString();
                             titleMap.put(value, index);
                             index++;
                         }
@@ -407,7 +407,7 @@ public class ExcelUtil {
                     Map<String, Object> map = new HashMap<String, Object>();
                     for (String k : titleMap.keySet()) {
                         Integer index = titleMap.get(k);
-                        String value = row.getCell(index).getStringCellValue();
+                        String value = row.getCell(index).toString();
                         map.put(k, value);
                     }
                     list.add((T) map);
